@@ -8,8 +8,8 @@ namespace Views.Commands
         protected override void Run()
         {
             ModelView.SceneModelView.SetScene(Scene.GetTestScene());
-            ModelView.PlayerModelView.Player.Display();
-            ModelView.SceneModelView.Scene.Display();
+            ModelView.PlayerModelView.Display();
+            ModelView.SceneModelView.Display();
         }
     }
 }

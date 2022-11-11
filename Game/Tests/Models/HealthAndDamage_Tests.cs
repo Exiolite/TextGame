@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace Tests.Models
 {
     [TestFixture]
-    public class HealthAndDamage_Tests
+    public class HealthAndDamage_Tests : TestsBase
     {
         [Test]
         public void Apply_Damage_TO_Health()

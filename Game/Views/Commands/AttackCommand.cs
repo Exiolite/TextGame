@@ -10,8 +10,8 @@ namespace Views.Commands
             if (ModelView.SceneModelView.Scene.TryGetEnemy(value, out Character enemy))
             {
                 ModelView.PlayerModelView.Attack(enemy);
-                ModelView.PlayerModelView.Player.Display();
-                ModelView.SceneModelView.Scene.Display();
+                ModelView.PlayerModelView.Display();
+                ModelView.SceneModelView.Display();
             }
         }
     }

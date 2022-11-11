@@ -4,7 +4,7 @@ namespace Views.Commands
 {
     public abstract class Command
     {
-        public void Run(string userInput)
+        public void Execute(string userInput)
         {
             string[] split = userInput.ToLower().Split(' ');
             if (!GetCommandName().Contains(split[0])) return;
@@ -13,12 +13,17 @@ namespace Views.Commands
             if (GetType() != typeof(AutoClearCommand))
                 if (View.CommandView.UseAutoClear)
                     Console.Clear();
-            
-            
+
+
             if (split.Length > 1)
                 if (int.TryParse(split[1], out int value))
                 {
                     Run(value - 1);
+                    return;
+                }
+                else
+                {
+                    Run(split[1]);
                     return;
                 }
 
@@ -39,6 +44,11 @@ namespace Views.Commands
         }
 
         protected virtual void Run(int value)
+        {
+            return;
+        }
+
+        protected virtual void Run(string value)
         {
             return;
         }

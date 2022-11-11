@@ -15,6 +15,11 @@ namespace Models
         }
 
 
-        public override string ToString() => $"{Name} ({Health.Value}/{Health.MaxValue})[{Damage.Value}]";
+        public override string ToString()
+        {
+            return Health.Value <= 0
+                ? $"Dead body of {Name}"
+                : $"{Name} ({Health.Value}/{Health.MaxValue})[{Damage.Value}]";
+        }
     }
 }

@@ -1,12 +1,10 @@
-﻿using Views;
-
-namespace Tests
+﻿namespace Tests
 {
     public class TestsBase
     {
         public TestsBase()
         {
-            new View();
+            Views.View view = new Views.View();
         }
     }
 }

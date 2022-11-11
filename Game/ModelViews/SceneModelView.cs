@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using System;
+using Models;
 
 namespace ModelViews
 {
@@ -10,6 +11,15 @@ namespace ModelViews
         public void SetScene(Scene scene)
         {
             Scene = scene;
+        }
+        
+        
+        public void Display()
+        {
+            if (Scene == null)
+                ModelView.LocalizationModelView.DisplayMessage("Scene.Null");
+            else
+                Console.WriteLine($"{Scene}");
         }
     }
 }

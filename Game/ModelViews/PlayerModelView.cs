@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.Design;
 using Models;
 
 namespace ModelViews
@@ -8,43 +9,43 @@ namespace ModelViews
         public Character Player { get; private set; }
 
 
-        public PlayerModelView()
-        {
-            Create();
-        }
-        
-
-        public void Create()
+        public void Create(string name)
         {
             Player = new Character(
-                "Player",
+                name,
                 new Health(100),
                 new Damage(12)
             );
+        }
+
+        public void Display()
+        {
+            if (Player == null)
+                ModelView.LocalizationModelView.DisplayMessage("Player.Null");
+            else
+                Console.WriteLine($"{Player}");
         }
 
         public void Attack(Character character)
         {
             if (character == null)
             {
-                Console.WriteLine("There is no one to attack");
+                ModelView.LocalizationModelView.DisplayMessage("Scene.Enemies.Null");
                 return;
             }
 
             if (Player == null)
             {
-                Console.WriteLine("Dead can not attack");
+                ModelView.LocalizationModelView.DisplayMessage("Player.Null");
                 return;
             }
 
-            if (!character.Health.TryApplyDamage(Player.Damage))
-            {
-                Console.WriteLine($"{character.Name} is dead");
-                ModelView.SceneModelView.Scene.OnCharacterDeath(character);
-            }
+            Console.WriteLine(!character.Health.TryApplyDamage(Player.Damage)
+                ? $"{character.Name} was killed by {Player.Name}"
+                : $"{Player.Name} caused {Player.Damage} damage to {character.Name}");
 
             if (!Player.Health.TryApplyDamage(character.Damage))
-                Console.WriteLine($"{Player.Name} is dead");
+                ModelView.LocalizationModelView.DisplayMessage("Player.Dead");
         }
     }
 }

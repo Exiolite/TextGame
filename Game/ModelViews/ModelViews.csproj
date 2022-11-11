@@ -35,9 +35,13 @@
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
+        <Reference Include="System.Web">
+          <HintPath>..\..\..\..\Windows\Microsoft.Net\assembly\GAC_64\System.Web\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.dll</HintPath>
+        </Reference>
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="LocalizationModelView.cs" />
         <Compile Include="ModelView.cs" />
         <Compile Include="PlayerModelView.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
@@ -52,6 +56,11 @@
         <Project>{de4df2f4-959d-4be6-b56c-dd556f85695d}</Project>
         <Name>Models</Name>
       </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Localizations\Localization.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

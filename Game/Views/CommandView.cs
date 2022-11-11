@@ -34,7 +34,7 @@ namespace Views
                 string userInput = Console.ReadLine();
                 foreach (Command command in Commands)
                 {
-                    command.Run(userInput);
+                    command.Execute(userInput);
                 }
             }
 

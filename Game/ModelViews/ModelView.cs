@@ -4,12 +4,14 @@ namespace ModelViews
     {
         public static PlayerModelView PlayerModelView { get; private set; }
         public static SceneModelView SceneModelView { get; private set; }
+        public static LocalizationModelView LocalizationModelView { get; private set; }
 
 
         public ModelView()
         {
             PlayerModelView = new PlayerModelView();
             SceneModelView = new SceneModelView();
+            LocalizationModelView = new LocalizationModelView();
         }
     }
 }

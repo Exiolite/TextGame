@@ -15,10 +15,9 @@ namespace Models
 
         public bool TryApplyDamage(Damage damage)
         {
-            if (Value <= damage.Value) return false;
-            
             Value -= damage.Value;
-            return true;
+            
+            return Value > 0;
         }
 
 

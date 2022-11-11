@@ -6,8 +6,8 @@ namespace Views.Commands
     {
         protected override void Run()
         {
-            ModelView.PlayerModelView.Player?.Display();
-            ModelView.SceneModelView.Scene?.Display();
+            ModelView.PlayerModelView.Display();
+            ModelView.SceneModelView.Display();
         }
     }
 }
