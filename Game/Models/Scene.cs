@@ -28,9 +28,10 @@ namespace Models
             StringBuilder stringBuilder = new StringBuilder();
             if (Enemies is { Count: 0 }) return "There is no one";
 
+            stringBuilder.AppendLine("You see: ");
             foreach (Character character in Enemies)
             {
-                stringBuilder.AppendLine(character.ToString());
+                stringBuilder.AppendLine($"     {Enemies.IndexOf(character) + 1} - {character}");
             }
 
             return stringBuilder.ToString();

@@ -8,11 +8,10 @@ namespace Views
     public sealed class CommandView
     {
         public List<Command> Commands { get; } = new List<Command>();
+        public bool UseAutoClear { get; set; } = false;
+        public bool UseUpdate { get; private set; } = true;
 
 
-        public bool Update { get; private set; } = true;
-        
-        
         public CommandView()
         {
             foreach (Type type in GetType().Assembly.GetTypes()
@@ -23,13 +22,13 @@ namespace Views
 
         public void Break()
         {
-            Update = false;
+            UseUpdate = false;
         }
-        
-        
+
+
         public void ReadUserCommands()
         {
-            while (Update)
+            while (UseUpdate)
             {
                 Console.Write("Command: ");
                 string userInput = Console.ReadLine();
@@ -38,7 +37,7 @@ namespace Views
                     command.Run(userInput);
                 }
             }
-            
+
             Environment.Exit(0);
         }
     }

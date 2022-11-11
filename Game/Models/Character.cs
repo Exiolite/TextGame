@@ -1,5 +1,3 @@
-using System;
-
 namespace Models
 {
     public sealed class Character : Model
@@ -17,6 +15,6 @@ namespace Models
         }
 
 
-        public override string ToString() => $"Name: {Name}, Damage: {Damage.Value}, Health: {Health.Value}";
+        public override string ToString() => $"{Name} ({Health.Value}/{Health.MaxValue})[{Damage.Value}]";
     }
 }
