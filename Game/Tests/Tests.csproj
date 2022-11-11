@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{20106744-6226-4C13-A350-7D29DB6601C6}</ProjectGuid>
+        <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>Tests</RootNamespace>
+        <AssemblyName>Tests</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+        <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
+            <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="ModelView\CommandModelView_Tests.cs" />
+        <Compile Include="TestsBase.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Model" />
+      <Folder Include="View" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Addons\Addons.csproj">
+        <Project>{3bc34089-96b9-40f3-b95b-0f95ead31882}</Project>
+        <Name>Addons</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Application\Application.csproj">
+        <Project>{112d76e8-58fc-4071-8301-d0424c19918f}</Project>
+        <Name>Application</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Command\Command.csproj">
+        <Project>{143dd1a9-9d4f-49f3-9ec5-596c100b4456}</Project>
+        <Name>Command</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\ModelViews\ModelViews.csproj">
+        <Project>{1448f5fd-7bf6-4db6-989b-3a7b4ddb379d}</Project>
+        <Name>ModelViews</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Models\Models.csproj">
+        <Project>{de4df2f4-959d-4be6-b56c-dd556f85695d}</Project>
+        <Name>Models</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Views\Views.csproj">
+        <Project>{1e07003b-417e-4e7b-9b46-7ee23c883bc3}</Project>
+        <Name>Views</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
