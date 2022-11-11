@@ -1,10 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=804eb28d_002Df902_002D40fa_002D9287_002D1f8dbf477a4d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;And&gt;&#xD;
-    &lt;TestAncestor&gt;&#xD;
-      &lt;TestId&gt;NUnit3x::20106744-6226-4C13-A350-7D29DB6601C6::.NETFramework,Version=v4.7.2::Tests.View.LocalizationView_Tests.Localization_IS_COUNT_GREATER_THAN_0&lt;/TestId&gt;&#xD;
-    &lt;/TestAncestor&gt;&#xD;
-    &lt;Project Location="C:\Git\TextGame\Game\Tests" Presentation="&amp;lt;tests&amp;gt;\&amp;lt;Tests&amp;gt;" /&gt;&#xD;
-    &lt;Namespace&gt;Tests.View&lt;/Namespace&gt;&#xD;
-  &lt;/And&gt;&#xD;
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CGit_005CExDb_005CExNoSQL_005Cbin_005CRelease_005CExNoSQL_002Edll/@EntryIndexedValue">True</s:Boolean>
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fe9ab787_002D06e4_002D4433_002D8e93_002D2c9265e2ac63/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;tests&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Project Location="C:\Git\TextGame\Game" Presentation="&amp;lt;tests&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

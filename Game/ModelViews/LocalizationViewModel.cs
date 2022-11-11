@@ -6,12 +6,12 @@ using System.Xml;
 
 namespace ModelViews
 {
-    public sealed class LocalizationModelView
+    public sealed class LocalizationViewModel
     {
         public Dictionary<string, string> Localization { get; }
 
 
-        public LocalizationModelView()
+        public LocalizationViewModel()
         {
             Localization = new Dictionary<string, string>();
 
@@ -32,7 +32,6 @@ namespace ModelViews
 
             string path = Path.Combine(
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                "Localizations",
                 "Localization.xml"
             );
 

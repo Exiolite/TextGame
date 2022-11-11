@@ -2,9 +2,13 @@ namespace Models
 {
     public sealed class Health : Model
     {
-        public int MaxValue { get; }
-        public int Value { get; private set; }
+        public int MaxValue { get; set; }
+        public int Value { get; set; }
 
+        public Health()
+        {
+            
+        }
 
         public Health(int value)
         {

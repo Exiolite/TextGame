@@ -7,9 +7,9 @@ namespace Views.Commands
     {
         protected override void Run()
         {
-            ModelView.SceneModelView.SetScene(Scene.GetTestScene());
-            ModelView.PlayerModelView.Display();
-            ModelView.SceneModelView.Display();
+            MainViewModel.SceneViewModel.Scene = Scene.GetTestScene();
+            MainViewModel.PlayerViewModel.Display();
+            MainViewModel.SceneViewModel.Display();
         }
     }
 }

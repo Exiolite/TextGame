@@ -7,11 +7,11 @@ namespace Views.Commands
     {
         protected override void Run(int value)
         {
-            if (ModelView.SceneModelView.Scene.TryGetEnemy(value, out Character enemy))
+            if (MainViewModel.SceneViewModel.Scene.TryGetEnemy(value, out Character enemy))
             {
-                ModelView.PlayerModelView.Attack(enemy);
-                ModelView.PlayerModelView.Display();
-                ModelView.SceneModelView.Display();
+                MainViewModel.PlayerViewModel.Attack(enemy);
+                MainViewModel.PlayerViewModel.Display();
+                MainViewModel.SceneViewModel.Display();
             }
         }
     }

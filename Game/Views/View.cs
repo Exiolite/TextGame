@@ -1,3 +1,5 @@
+using ExNoSQL;
+using Models;
 using ModelViews;
 
 namespace Views
@@ -5,15 +7,15 @@ namespace Views
     public sealed class View
     {
         public static CommandView CommandView { get; private set; }
-        public static LocalizationModelView LocalizationModelView { get; private set; }
+        public static LocalizationViewModel LocalizationViewModel { get; private set; }
 
 
         public View()
         {
             CommandView = new CommandView();
-            LocalizationModelView = new LocalizationModelView();
+            LocalizationViewModel = new LocalizationViewModel();
 
-            ModelView modelView = new ModelView();
+            MainViewModel mainViewModel = new MainViewModel();
         }
     }
 }

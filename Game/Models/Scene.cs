@@ -3,25 +3,20 @@ using System.Text;
 
 namespace Models
 {
-    public sealed class Scene : Model
+    public sealed class Scene : ExNoSQL.Entity
     {
-        public List<Character> Enemies { get; }
+        public List<Character> Enemies { get; set; }
 
 
-        public Scene(List<Character> enemies)
+        public static Scene GetTestScene() => new Scene()
         {
-            Enemies = enemies;
-        }
-
-
-        public static Scene GetTestScene() => new Scene(
-            new List<Character>()
+            Enemies = new List<Character>()
             {
-                new Character("Tugoserya", new Health(15), new Damage(10)),
-                new Character("Foxiris", new Health(15), new Damage(10)),
-                new Character("Harambe", new Health(15), new Damage(10)),
+                CharacterFactory.Custom("Tugoserya", 15, 10),
+                CharacterFactory.Custom("Foxiris", 15, 10),
+                CharacterFactory.Custom("Harambe", 15, 10),
             }
-        );
+        };
 
         public override string ToString()
         {

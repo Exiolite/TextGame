@@ -7,13 +7,11 @@ namespace Views.Commands
         public void Execute(string userInput)
         {
             string[] split = userInput.ToLower().Split(' ');
-            if (!GetCommandName().Contains(split[0])) return;
-
-
+            if (GetCommandName() != split[0]) return;
+            
             if (GetType() != typeof(AutoClearCommand))
                 if (View.CommandView.UseAutoClear)
                     Console.Clear();
-
 
             if (split.Length > 1)
                 if (int.TryParse(split[1], out int value))

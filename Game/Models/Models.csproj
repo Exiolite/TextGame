@@ -33,6 +33,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="ExNoSQL">
+          <HintPath>..\..\..\ExDb\ExNoSQL\bin\Release\ExNoSQL.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -40,10 +43,11 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Character.cs" />
+        <Compile Include="CharacterFactory.cs" />
+        <Compile Include="Mc.cs" />
         <Compile Include="Damage.cs" />
         <Compile Include="Health.cs" />
         <Compile Include="Model.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Scene.cs" />
     </ItemGroup>
     <ItemGroup>
@@ -51,10 +55,9 @@
         <Project>{3bc34089-96b9-40f3-b95b-0f95ead31882}</Project>
         <Name>Addons</Name>
       </ProjectReference>
-      <ProjectReference Include="..\Adons\Adons.csproj">
-        <Project>{e7d93184-f0ac-4fdf-a41f-4bd9943418ab}</Project>
-        <Name>Adons</Name>
-      </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="App.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

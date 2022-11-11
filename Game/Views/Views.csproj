@@ -32,6 +32,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="ExNoSQL">
+          <HintPath>..\..\..\ExDb\ExNoSQL\bin\Release\ExNoSQL.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -40,6 +43,9 @@
     <ItemGroup>
         <Compile Include="Commands\AutoClearCommand.cs" />
         <Compile Include="Commands\ExitCommand.cs" />
+        <Compile Include="Commands\GameLoadCommand.cs" />
+        <Compile Include="Commands\GameNewCommand.cs" />
+        <Compile Include="Commands\GameSaveCommand.cs" />
         <Compile Include="Commands\RespawnCommand.cs" />
         <Compile Include="Commands\AttackCommand.cs" />
         <Compile Include="Commands\ClearCommand.cs" />
@@ -48,7 +54,6 @@
         <Compile Include="Commands\HelpCommand.cs" />
         <Compile Include="Commands\LookCommand.cs" />
         <Compile Include="CommandView.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="View.cs" />
     </ItemGroup>
     <ItemGroup>
@@ -64,6 +69,9 @@
         <Project>{de4df2f4-959d-4be6-b56c-dd556f85695d}</Project>
         <Name>Models</Name>
       </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="App.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

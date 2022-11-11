@@ -1,19 +1,10 @@
 namespace Models
 {
-    public sealed class Character : Model
+    public sealed class Character : ExNoSQL.Entity
     {
-        public string Name { get; }
-        public Health Health { get; }
-        public Damage Damage { get; }
-
-
-        public Character(string name, Health health, Damage damage)
-        {
-            Name = name;
-            Health = health;
-            Damage = damage;
-        }
-
+        public string Name { get; set; }
+        public Health Health { get; set; }
+        public Damage Damage { get; set; }
 
         public override string ToString()
         {
