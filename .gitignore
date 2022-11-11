@@ -9,7 +9,6 @@ _ReSharper.Caches/
 .consulo/
 .vs/
 .idea/
-*.dll
 *.unityproj
 *.suo
 *.tmp
