@@ -38,6 +38,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Commands\ExitCommand.cs" />
         <Compile Include="Commands\RespawnCommand.cs" />
         <Compile Include="Commands\AttackCommand.cs" />
         <Compile Include="Commands\ClearCommand.cs" />

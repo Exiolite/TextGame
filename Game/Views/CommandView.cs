@@ -10,6 +10,9 @@ namespace Views
         public List<Command> Commands { get; } = new List<Command>();
 
 
+        public bool Update { get; private set; } = true;
+        
+        
         public CommandView()
         {
             foreach (Type type in GetType().Assembly.GetTypes()
@@ -17,16 +20,26 @@ namespace Views
                 Commands.Add((Command)Activator.CreateInstance(type));
         }
 
+
+        public void Break()
+        {
+            Update = false;
+        }
+        
+        
         public void ReadUserCommands()
         {
-            while (true)
+            while (Update)
             {
+                Console.Write("Command: ");
                 string userInput = Console.ReadLine();
                 foreach (Command command in Commands)
                 {
                     command.Run(userInput);
                 }
             }
+            
+            Environment.Exit(0);
         }
     }
 }

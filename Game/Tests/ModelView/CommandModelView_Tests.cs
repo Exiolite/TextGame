@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using NUnit.Framework;
 using Views;
 
@@ -8,7 +7,7 @@ namespace Tests.ModelView
     public sealed class CommandModelView_Tests : TestsBase
     {
         [Test]
-        public async Task GET_Commands_FROM_Assembly()
+        public void GET_Commands_FROM_Assembly()
         {
             Assert.True(View.CommandView.Commands.Count > 0);
         }

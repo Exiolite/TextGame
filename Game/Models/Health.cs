@@ -18,5 +18,8 @@ namespace Models
             Value -= damage.Value;
             return true;
         }
+
+
+        public override string ToString() => Value.ToString();
     }
 }

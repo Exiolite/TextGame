@@ -1,5 +1,4 @@
-﻿using ModelViews;
-using Views;
+﻿using Views;
 
 namespace Application
 {
@@ -8,6 +7,7 @@ namespace Application
         public static void Main(string[] args)
         {
             View view = new View();
+            View.CommandView.ReadUserCommands();
         }
     }
 }

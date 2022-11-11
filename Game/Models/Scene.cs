@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
 namespace Models
 {
-    public class Scene
+    public sealed class Scene : Model
     {
         public List<Character> Enemies { get; }
 
@@ -21,16 +22,18 @@ namespace Models
                 new Character("Harambe", new Health(15), new Damage(10)),
             }
         );
-        
-        public void Display()
+
+        public override string ToString()
         {
-            if (Enemies == null) return;
-            if (Enemies.Count == 0) return;
+            StringBuilder stringBuilder = new StringBuilder();
+            if (Enemies is { Count: 0 }) return "There is no one";
 
             foreach (Character character in Enemies)
             {
-                character.Display();
+                stringBuilder.AppendLine(character.ToString());
             }
+
+            return stringBuilder.ToString();
         }
 
         public bool TryGetEnemy(int index, out Character enemy)

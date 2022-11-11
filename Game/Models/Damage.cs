@@ -9,5 +9,8 @@ namespace Models
         {
             Value = value;
         }
+
+
+        public override string ToString() => Value.ToString();
     }
 }

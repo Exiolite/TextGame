@@ -42,12 +42,10 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Models\HealthAndDamage_Tests.cs" />
         <Compile Include="ModelView\CommandModelView_Tests.cs" />
         <Compile Include="TestsBase.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="View" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Addons\Addons.csproj">
