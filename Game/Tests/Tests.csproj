@@ -47,7 +47,6 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Model" />
       <Folder Include="View" />
     </ItemGroup>
     <ItemGroup>

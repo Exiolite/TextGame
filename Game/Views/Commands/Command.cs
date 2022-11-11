@@ -1,14 +1,19 @@
-using Addons;
-
 namespace Views.Commands
 {
     public abstract class Command
     {
         public void Run(string userInput)
         {
-            userInput = userInput.Replace(" ", "").ToLower();
+            string[] split = userInput.ToLower().Split(' ');
 
-            if (!GetCommandName().Contains(userInput)) return;
+            if (!GetCommandName().Contains(split[0])) return;
+
+            if (split.Length > 1)
+                if (int.TryParse(split[1], out int value))
+                {
+                    Run(value-1);
+                    return;
+                }
 
             Run();
         }
@@ -20,7 +25,15 @@ namespace Views.Commands
                 .Replace("views.commands.", "")
                 .Replace("command", "");
         }
-        
-        protected abstract void Run();
+
+        protected virtual void Run()
+        {
+            return;
+        }
+
+        protected virtual void Run(int value)
+        {
+            return;
+        }
     }
 }

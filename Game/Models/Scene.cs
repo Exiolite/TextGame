@@ -4,19 +4,16 @@ namespace Models
 {
     public class Scene
     {
-        public Character PlayerCharacter { get; }
         public List<Character> Enemies { get; }
 
 
-        public Scene(Character playerCharacter, List<Character> enemies)
+        public Scene(List<Character> enemies)
         {
-            PlayerCharacter = playerCharacter;
             Enemies = enemies;
         }
 
 
         public static Scene GetTestScene() => new Scene(
-            new Character("Bibon", new Health(100),new Damage(8)),
             new List<Character>()
             {
                 new Character("Tugoserya", new Health(15), new Damage(10)),
@@ -24,5 +21,34 @@ namespace Models
                 new Character("Harambe", new Health(15), new Damage(10)),
             }
         );
+        
+        public void Display()
+        {
+            if (Enemies == null) return;
+            if (Enemies.Count == 0) return;
+
+            foreach (Character character in Enemies)
+            {
+                character.Display();
+            }
+        }
+
+        public bool TryGetEnemy(int index, out Character enemy)
+        {
+            if (Enemies.Count <= index)
+            {
+                enemy = null;
+                return false;
+            }
+
+            enemy = Enemies[index];
+            return true;
+        }
+
+        public void OnCharacterDeath(Character character)
+        {
+            if (Enemies.Contains(character))
+                Enemies.Remove(character);
+        }
     }
 }

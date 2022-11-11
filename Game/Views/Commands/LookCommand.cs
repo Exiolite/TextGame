@@ -1,10 +1,13 @@
+using ModelViews;
+
 namespace Views.Commands
 {
     public sealed class LookCommand : Command
     {
         protected override void Run()
         {
-            View.SceneView.SceneModelView.DisplayScene();
+            ModelView.PlayerModelView.Player?.Display();
+            ModelView.SceneModelView.Scene?.Display();
         }
     }
 }

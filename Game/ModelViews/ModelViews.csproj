@@ -38,6 +38,8 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="ModelView.cs" />
+        <Compile Include="PlayerModelView.cs" />
         <Compile Include="GameCycleModelView.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="SceneModelView.cs" />

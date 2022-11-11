@@ -1,4 +1,5 @@
 using Models;
+using ModelViews;
 
 namespace Views.Commands
 {
@@ -6,8 +7,9 @@ namespace Views.Commands
     {
         protected override void Run()
         {
-            View.SceneView.SceneModelView.SetScene(Scene.GetTestScene());
-            View.SceneView.SceneModelView.DisplayScene();
+            ModelView.SceneModelView.SetScene(Scene.GetTestScene());
+            ModelView.PlayerModelView.Player.Display();
+            ModelView.SceneModelView.Scene.Display();
         }
     }
 }

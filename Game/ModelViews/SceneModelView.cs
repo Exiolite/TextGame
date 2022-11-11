@@ -1,5 +1,4 @@
-﻿using System;
-using Models;
+﻿using Models;
 
 namespace ModelViews
 {
@@ -11,25 +10,6 @@ namespace ModelViews
         public void SetScene(Scene scene)
         {
             Scene = scene;
-        }
-        
-        public void DisplayScene()
-        {
-            if (Scene == null)
-            {
-                Console.WriteLine("No one there...");
-                return;
-            }
-            if (Scene.PlayerCharacter == null) return;
-            if (Scene.Enemies == null) return;
-            if (Scene.Enemies.Count == 0) return;
-            
-            Scene.PlayerCharacter.Display();
-            
-            foreach (Character character in Scene.Enemies)
-            {
-                character.Display();
-            }
         }
     }
 }

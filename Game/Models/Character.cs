@@ -8,7 +8,7 @@ namespace Models
         public Health Health { get; }
         public Damage Damage { get; }
 
-        
+
         public Character(string name, Health health, Damage damage)
         {
             Name = name;
