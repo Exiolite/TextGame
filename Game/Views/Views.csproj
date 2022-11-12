@@ -46,6 +46,7 @@
         <Compile Include="Commands\GameLoadCommand.cs" />
         <Compile Include="Commands\GameNewCommand.cs" />
         <Compile Include="Commands\GameSaveCommand.cs" />
+        <Compile Include="Commands\KillHistoryCommand.cs" />
         <Compile Include="Commands\RespawnCommand.cs" />
         <Compile Include="Commands\AttackCommand.cs" />
         <Compile Include="Commands\ClearCommand.cs" />

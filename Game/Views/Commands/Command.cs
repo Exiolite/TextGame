@@ -4,7 +4,7 @@ namespace Views.Commands
 {
     public abstract class Command
     {
-        public void Execute(string userInput)
+        public void TryExecute(string userInput)
         {
             string[] split = userInput.ToLower().Split(' ');
             if (GetCommandName() != split[0]) return;

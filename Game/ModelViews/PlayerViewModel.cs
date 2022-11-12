@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using ExNoSQL;
 using Models;
 
 namespace ModelViews
@@ -6,7 +8,6 @@ namespace ModelViews
     public sealed class PlayerViewModel
     {
         public Character PlayerCharacter { get; set; } = new Character();
-        
 
         public PlayerViewModel Display()
         {
@@ -14,7 +15,7 @@ namespace ModelViews
                 MainViewModel.LocalizationViewModel.DisplayMessage("Player.Null");
             else
                 Console.WriteLine($"{PlayerCharacter}");
-            
+
             return this;
         }
 
@@ -32,9 +33,16 @@ namespace ModelViews
                 return this;
             }
 
-            Console.WriteLine(!character.Health.TryApplyDamage(PlayerCharacter.Damage)
-                ? $"{character.Name} was killed by {PlayerCharacter.Name}"
-                : $"{PlayerCharacter.Name} caused {PlayerCharacter.Damage} damage to {character.Name}");
+            if (!character.Health.TryApplyDamage(PlayerCharacter.Damage))
+            {
+                Console.WriteLine($"{character.Name} was killed by {PlayerCharacter.Name}");
+                Db<Mc>.Context.KilledCharactersByPlayer.Insert(character);
+            }
+            else
+            {
+                Console.WriteLine($"{PlayerCharacter.Name} caused {PlayerCharacter.Damage} damage to {character.Name}");
+            }
+
 
             if (!PlayerCharacter.Health.TryApplyDamage(character.Damage))
                 MainViewModel.LocalizationViewModel.DisplayMessage("Player.Dead");
