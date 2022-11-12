@@ -7,7 +7,7 @@ namespace ModelViews
 {
     public sealed class PlayerViewModel
     {
-        public Character PlayerCharacter { get; set; } = new Character();
+        public Character PlayerCharacter { get; set; }
 
         public PlayerViewModel Display()
         {
@@ -24,12 +24,6 @@ namespace ModelViews
             if (character == null)
             {
                 MainViewModel.LocalizationViewModel.DisplayMessage("Scene.Enemies.Null");
-                return this;
-            }
-
-            if (PlayerCharacter == null)
-            {
-                MainViewModel.LocalizationViewModel.DisplayMessage("Player.Null");
                 return this;
             }
 

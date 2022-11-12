@@ -41,6 +41,10 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="CommandPlugins\Checker.cs" />
+        <Compile Include="CommandPlugins\ContextInitialized.cs" />
+        <Compile Include="Command.cs" />
+        <Compile Include="CommandPlugins\PlayerInitialized.cs" />
         <Compile Include="Commands\AutoClearCommand.cs" />
         <Compile Include="Commands\ExitCommand.cs" />
         <Compile Include="Commands\GameLoadCommand.cs" />
@@ -50,7 +54,6 @@
         <Compile Include="Commands\RespawnCommand.cs" />
         <Compile Include="Commands\AttackCommand.cs" />
         <Compile Include="Commands\ClearCommand.cs" />
-        <Compile Include="Commands\Command.cs" />
         <Compile Include="Commands\HuntCommand.cs" />
         <Compile Include="Commands\HelpCommand.cs" />
         <Compile Include="Commands\LookCommand.cs" />

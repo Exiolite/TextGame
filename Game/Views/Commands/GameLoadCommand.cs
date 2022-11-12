@@ -8,7 +8,6 @@ namespace Views.Commands
     {
         protected override void Run()
         {
-            Db<Mc>.NewContext();
             Db<Mc>.Import();
 
             MainViewModel.PlayerViewModel.PlayerCharacter = Db<Mc>.Context.PlayerCharacter;

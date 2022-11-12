@@ -1,14 +1,26 @@
 using System;
+using System.Collections.Generic;
+using Views.CommandPlugins;
+using Views.Commands;
 
-namespace Views.Commands
+namespace Views
 {
     public abstract class Command
     {
+        private List<Checker> CommandPlugins { get; set; }
+
+
         public void TryExecute(string userInput)
         {
+            AddCheckers();
+            
             string[] split = userInput.ToLower().Split(' ');
             if (GetCommandName() != split[0]) return;
-            
+
+            if (CommandPlugins != null)
+                foreach (Checker commandPlugin in CommandPlugins)
+                    if (!commandPlugin.Check()) return;
+                
             if (GetType() != typeof(AutoClearCommand))
                 if (View.CommandView.UseAutoClear)
                     Console.Clear();
@@ -26,6 +38,18 @@ namespace Views.Commands
                 }
 
             Run();
+        }
+
+        protected virtual void AddCheckers()
+        {
+            return;
+        }
+
+        protected void AddCommandPlugin(Checker checker)
+        {
+            if (CommandPlugins == null) CommandPlugins = new List<Checker>();
+            
+            CommandPlugins.Add(checker);
         }
 
         public string GetCommandName()

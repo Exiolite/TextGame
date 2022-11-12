@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="en">
+    <item key="Checker.Db.Context" value="Use command 'gamenew' to create new game"/>
+    <item key="Checker.Player" value="There is no player, use command 'respawn NameOfCharacter' first."/>
     <item key="Scene.Null" value="There is no one..."/>
-    <item key="Player.Null" value="There is no player, use command 'respawn NameOfCharacter' first."/>
     <item key="Player.Death" value="Player dead, use command 'respawn NameOfCharacter' for respawn."/>
 </localizationDictionary>
