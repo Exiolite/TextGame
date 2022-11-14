@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Views.CommandPlugins;
-using Views.Commands;
+using System.ComponentModel.Design;
+using ModelViews.CommandPlugins;
+using ModelViews.Commands;
 
-namespace Views
+namespace ModelViews
 {
     public abstract class Command
     {
@@ -12,18 +13,21 @@ namespace Views
 
         public void TryExecute(string userInput)
         {
-            AddCheckers();
-            
+            InitializeCheckers();
+
             string[] split = userInput.ToLower().Split(' ');
             if (GetCommandName() != split[0]) return;
 
             if (_commandPlugins != null)
                 foreach (Checker commandPlugin in _commandPlugins)
-                    if (!commandPlugin.Check()) return;
-                
-            if (GetType() != typeof(AutoClearCommand))
-                if (View.CommandView.UseAutoClear)
+                    if (!commandPlugin.Check())
+                        return;
+
+            if (GetType() != typeof(EnableAutoClearCommand))
+                if (MainViewModel.CommandViewModel.IsAutoClearEnabled)
                     Console.Clear();
+            
+            DisplayMessages();
 
             if (split.Length > 1)
                 if (int.TryParse(split[1], out int value))
@@ -38,9 +42,14 @@ namespace Views
                 }
 
             Run();
+            
+            if (MainViewModel.DbViewModel.IsAutoSaveEnabled)
+                MainViewModel.DbViewModel.Save();
         }
 
-        protected virtual void AddCheckers()
+        public abstract string GetDescription();
+
+        protected virtual void InitializeCheckers()
         {
             return;
         }
@@ -48,7 +57,7 @@ namespace Views
         protected void AddChecker(Checker checker)
         {
             if (_commandPlugins == null) _commandPlugins = new List<Checker>();
-            
+
             _commandPlugins.Add(checker);
         }
 
@@ -71,6 +80,11 @@ namespace Views
         }
 
         protected virtual void Run(string value)
+        {
+            return;
+        }
+
+        protected virtual void DisplayMessages()
         {
             return;
         }

@@ -1,15 +1,13 @@
-using ModelViews;
-
-namespace Views.CommandPlugins
+namespace ModelViews.CommandPlugins
 {
-    public sealed class PlayerInitialized : Checker
+    public sealed class PlayerAliveChecker : Checker
     {
         public override bool Check()
         {
             bool flag = MainViewModel.PlayerViewModel.PlayerCharacter != null;
 
             if (!flag)
-                MainViewModel.LocalizationViewModel.DisplayMessage("Checker.Player");
+                MainViewModel.LocalizationViewModel.DisplayMessage("Checker.Player.Null");
             
             return flag;
         }

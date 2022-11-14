@@ -14,6 +14,9 @@ namespace Models
         
         public List<Character> KillHistoryCharacters { get; set; }
 
+
+        public bool IsAutoClearEnabled { get; set; }
+        public bool IsAutoSaveEnabled { get; set; }
         
         public Mc() : base("D:/")
         {

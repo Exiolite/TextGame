@@ -1,4 +1,4 @@
-namespace Views.CommandPlugins
+namespace ModelViews.CommandPlugins
 {
     public abstract class Checker
     {

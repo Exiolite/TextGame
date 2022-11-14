@@ -6,8 +6,7 @@ namespace Views
 {
     public sealed class View
     {
-        public static CommandView CommandView { get; private set; }
-        public static LocalizationViewModel LocalizationViewModel { get; private set; }
+
 
 
         public View()

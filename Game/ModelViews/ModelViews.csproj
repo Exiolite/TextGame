@@ -44,6 +44,26 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Command.cs" />
+        <Compile Include="CommandPlugins\Checker.cs" />
+        <Compile Include="CommandPlugins\ContextInitializedChecker.cs" />
+        <Compile Include="CommandPlugins\PlayerAliveChecker.cs" />
+        <Compile Include="CommandPlugins\PlayerDeadChecker.cs" />
+        <Compile Include="CommandPlugins\PlayerNotAliveChecker.cs" />
+        <Compile Include="Commands\AttackCommand.cs" />
+        <Compile Include="Commands\ClearCommand.cs" />
+        <Compile Include="Commands\EnableAutoClearCommand.cs" />
+        <Compile Include="Commands\EnableAutoSaveCommand.cs" />
+        <Compile Include="Commands\ExitCommand.cs" />
+        <Compile Include="Commands\GameLoadCommand.cs" />
+        <Compile Include="Commands\GameNewCommand.cs" />
+        <Compile Include="Commands\GameSaveCommand.cs" />
+        <Compile Include="Commands\HelpCommand.cs" />
+        <Compile Include="Commands\HuntCommand.cs" />
+        <Compile Include="Commands\KillHistoryCommand.cs" />
+        <Compile Include="Commands\LookCommand.cs" />
+        <Compile Include="Commands\RespawnCommand.cs" />
+        <Compile Include="CommandViewModel.cs" />
         <Compile Include="DbViewModel.cs" />
         <Compile Include="ExperienceViewModel.cs" />
         <Compile Include="KillHistoryViewModel.cs" />

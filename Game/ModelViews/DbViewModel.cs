@@ -5,6 +5,12 @@ namespace ModelViews
 {
     public sealed class DbViewModel
     {
+        #region Properties
+
+        public bool IsAutoSaveEnabled { get; set; }
+
+        #endregion
+        
         #region Methods
 
         #region Public
@@ -15,10 +21,10 @@ namespace ModelViews
             Db<Mc>.Context.Scene = MainViewModel.SceneViewModel.Scene;
             Db<Mc>.Context.PlayerExperience = MainViewModel.ExperienceViewModel.PlayerExperience;
             Db<Mc>.Context.KillHistoryCharacters = MainViewModel.KillHistoryViewModel.KillHistoryCharacters;
+            Db<Mc>.Context.IsAutoClearEnabled = MainViewModel.CommandViewModel.IsAutoClearEnabled;
+            Db<Mc>.Context.IsAutoSaveEnabled = IsAutoSaveEnabled;
             
             Db<Mc>.Export();
-            
-            MainViewModel.LocalizationViewModel.DisplayMessage("Message.Game.Save");
         }
 
         public void Load(string name)
@@ -31,15 +37,15 @@ namespace ModelViews
             MainViewModel.ExperienceViewModel.PlayerExperience = Db<Mc>.Context.PlayerExperience;
             MainViewModel.KillHistoryViewModel.KillHistoryCharacters = Db<Mc>.Context.KillHistoryCharacters;
             
-            MainViewModel.LocalizationViewModel.DisplayMessage("Message.Game.Load", name);
+            MainViewModel.CommandViewModel.IsAutoClearEnabled = Db<Mc>.Context.IsAutoClearEnabled;
+            IsAutoSaveEnabled = Db<Mc>.Context.IsAutoSaveEnabled;
+
         }
 
         public void New(string name)
         {
             Db<Mc>.CreateNewContext(name);
             
-            MainViewModel.LocalizationViewModel.DisplayMessage("Message.Game.New", name);
-            MainViewModel.LocalizationViewModel.DisplayMessage("Checker.Player");
             MainViewModel.ExperienceViewModel.PlayerExperience = new Experience();
         }
         

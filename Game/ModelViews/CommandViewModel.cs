@@ -1,18 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Views.Commands;
 
-namespace Views
+namespace ModelViews
 {
-    public sealed class CommandView
+    public sealed class CommandViewModel
     {
         public List<Command> Commands { get; } = new List<Command>();
-        public bool UseAutoClear { get; set; } = false;
+        public bool IsAutoClearEnabled { get; set; } = false;
         public bool UseUpdate { get; private set; } = true;
 
 
-        public CommandView()
+        public CommandViewModel()
         {
             foreach (Type type in GetType().Assembly.GetTypes()
                          .Where(o => o.BaseType == typeof(Command)))

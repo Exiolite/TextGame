@@ -4,7 +4,7 @@ namespace Models
 {
     public static class CharacterFactory
     {
-        public static Character Weak(string name) => new Character()
+        public static Character Hard(string name) => new Character()
         {
             Name = name,
             Health = new Health(80),
@@ -19,7 +19,7 @@ namespace Models
         };
 
         
-        public static Character Strong(string name) => new Character()
+        public static Character Easy(string name) => new Character()
         {
             Name = name,
             Health = new Health(120),

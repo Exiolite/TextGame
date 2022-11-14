@@ -8,6 +8,7 @@ namespace ModelViews
         public static ExperienceViewModel ExperienceViewModel { get; private set; }
         public static KillHistoryViewModel KillHistoryViewModel { get; private set; }
         public static DbViewModel DbViewModel { get; private set; }
+        public static CommandViewModel CommandViewModel { get; private set; }
         
         public MainViewModel()
         {
@@ -17,6 +18,7 @@ namespace ModelViews
             ExperienceViewModel = new ExperienceViewModel();
             KillHistoryViewModel = new KillHistoryViewModel();
             DbViewModel = new DbViewModel();
+            CommandViewModel = new CommandViewModel();
         }
     }
 }

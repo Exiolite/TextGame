@@ -3,8 +3,14 @@
     <item key="Message.Game.New" value="New game started:"/>
     <item key="Message.Game.Load" value="Game loaded:"/>
     <item key="Message.Game.Save" value="Game saved"/>
+    <item key="Message.Game.AutoSave.Enabled" value="Auto save enabled"/>
+    <item key="Message.Game.AutoSave.Disabled" value="Auto save disabled"/>
+    <item key="Message.Game.AutoClear.Enabled" value="Auto clear enabled"/>
+    <item key="Message.Game.AutoClear.Disabled" value="Auto clear diabled"/>
     <item key="Checker.Db.Context" value="Use command 'gamenew' to create new game"/>
-    <item key="Checker.Player" value="There is no player, use command 'respawn NameOfCharacter' first."/>
+    <item key="Checker.Player.Alive" value="Player is alive"/>
+    <item key="Checker.Player.Null" value="There is no player, use command 'respawn NameOfCharacter' first."/>
+    <item key="Checker.Player.Dead" value="Player is dead, use command 'respawn NameOfCharacter' first."/>
     <item key="Scene.Null" value="There is no one..."/>
     <item key="Player.Death" value="Player dead, use command 'respawn NameOfCharacter' for respawn."/>
 </localizationDictionary>

@@ -1,10 +1,9 @@
 using ExNoSQL;
 using Models;
-using ModelViews;
 
-namespace Views.CommandPlugins
+namespace ModelViews.CommandPlugins
 {
-    public sealed class ContextInitialized : Checker
+    public sealed class ContextInitializedChecker : Checker
     {
         public override bool Check()
         {
