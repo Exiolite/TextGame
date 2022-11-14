@@ -5,7 +5,7 @@ namespace ModelViews
 {
     public sealed class SceneViewModel
     {
-        public Scene Scene { get; set; } = Scene.GetTestScene();
+        public Scene Scene { get; set; }
 
 
         public void Display()

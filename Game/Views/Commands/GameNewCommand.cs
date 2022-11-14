@@ -11,6 +11,7 @@ namespace Views.Commands
             Db<Mc>.CreateNewContext();
             
             MainViewModel.LocalizationViewModel.DisplayMessage("Checker.Player");
+            MainViewModel.ExperienceViewModel.PlayerExperience = new Experience();
         }
     }
 }

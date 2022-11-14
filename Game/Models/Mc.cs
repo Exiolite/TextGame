@@ -7,6 +7,7 @@ namespace Models
     public class Mc : Context
     {
         public Character PlayerCharacter { get; set; }
+        public Experience PlayerExperience { get; set; }
         public Scene Scene { get; set; }
         
         public Repository<Character> KilledCharactersByPlayer { get; set; } = new Repository<Character>();

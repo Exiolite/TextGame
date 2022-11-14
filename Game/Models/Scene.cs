@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Models
 {
-    public sealed class Scene : ExNoSQL.Entity
+    public sealed class Scene : Model
     {
         public List<Character> Enemies { get; set; }
 

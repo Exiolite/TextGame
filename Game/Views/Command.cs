@@ -7,7 +7,7 @@ namespace Views
 {
     public abstract class Command
     {
-        private List<Checker> CommandPlugins { get; set; }
+        private List<Checker> _commandPlugins;
 
 
         public void TryExecute(string userInput)
@@ -17,8 +17,8 @@ namespace Views
             string[] split = userInput.ToLower().Split(' ');
             if (GetCommandName() != split[0]) return;
 
-            if (CommandPlugins != null)
-                foreach (Checker commandPlugin in CommandPlugins)
+            if (_commandPlugins != null)
+                foreach (Checker commandPlugin in _commandPlugins)
                     if (!commandPlugin.Check()) return;
                 
             if (GetType() != typeof(AutoClearCommand))
@@ -47,9 +47,9 @@ namespace Views
 
         protected void AddCommandPlugin(Checker checker)
         {
-            if (CommandPlugins == null) CommandPlugins = new List<Checker>();
+            if (_commandPlugins == null) _commandPlugins = new List<Checker>();
             
-            CommandPlugins.Add(checker);
+            _commandPlugins.Add(checker);
         }
 
         public string GetCommandName()

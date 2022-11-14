@@ -12,6 +12,7 @@ namespace Views.Commands
 
             MainViewModel.PlayerViewModel.PlayerCharacter = Db<Mc>.Context.PlayerCharacter;
             MainViewModel.SceneViewModel.Scene = Db<Mc>.Context.Scene;
+            MainViewModel.ExperienceViewModel.PlayerExperience = Db<Mc>.Context.PlayerExperience;
         }
     }
 }

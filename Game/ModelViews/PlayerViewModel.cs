@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using ExNoSQL;
 using Models;
 
@@ -7,41 +6,78 @@ namespace ModelViews
 {
     public sealed class PlayerViewModel
     {
-        public Character PlayerCharacter { get; set; }
+        #region Properties
 
-        public PlayerViewModel Display()
+        public Character PlayerCharacter { get; set; }
+        public Character CurrentEnemyCharacter { get; set; }
+
+        #endregion
+
+
+        #region Methods
+
+        #region Public
+
+        public void Display()
         {
             if (PlayerCharacter == null)
                 MainViewModel.LocalizationViewModel.DisplayMessage("Player.Null");
             else
-                Console.WriteLine($"{PlayerCharacter}");
-
-            return this;
+                Console.WriteLine($"{PlayerCharacter}<{MainViewModel.ExperienceViewModel.PlayerExperience}>");
         }
 
-        public PlayerViewModel Attack(Character character)
+        public void Attack(Character character)
         {
-            if (character == null)
+            CurrentEnemyCharacter = character;
+
+            CheckEnemyCharacter();
+            CheckPlayerCharacter();
+            ProcessPlayerAttack();
+            ProcessEnemyAttack();
+        }
+
+        #endregion
+
+        #region Private
+
+        private void CheckEnemyCharacter()
+        {
+            if (CurrentEnemyCharacter == null)
             {
                 MainViewModel.LocalizationViewModel.DisplayMessage("Scene.Enemies.Null");
-                return this;
+                return;
             }
 
-            if (!character.Health.TryApplyDamage(PlayerCharacter.Damage))
+            if (CurrentEnemyCharacter.Health.Value < 0) return;
+        }
+
+        private void CheckPlayerCharacter()
+        {
+        }
+
+        private void ProcessPlayerAttack()
+        {
+            if (!CurrentEnemyCharacter.Health.TryApplyDamage(PlayerCharacter.Damage))
             {
-                Console.WriteLine($"{character.Name} was killed by {PlayerCharacter.Name}");
-                Db<Mc>.Context.KilledCharactersByPlayer.Insert(character);
+                Console.WriteLine($"{CurrentEnemyCharacter.Name} was killed by {PlayerCharacter.Name}");
+                MainViewModel.ExperienceViewModel.PlayerExperience?.Add((uint)CurrentEnemyCharacter.Damage.Value);
+
+                Db<Mc>.Context.KilledCharactersByPlayer.Insert(CurrentEnemyCharacter);
             }
             else
-            {
-                Console.WriteLine($"{PlayerCharacter.Name} caused {PlayerCharacter.Damage} damage to {character.Name}");
-            }
-
-
-            if (!PlayerCharacter.Health.TryApplyDamage(character.Damage))
-                MainViewModel.LocalizationViewModel.DisplayMessage("Player.Dead");
-
-            return this;
+                Console.WriteLine(
+                    $"{PlayerCharacter.Name} caused {PlayerCharacter.Damage} damage to {CurrentEnemyCharacter.Name}"
+                );
         }
+
+        private void ProcessEnemyAttack()
+        {
+            if (!PlayerCharacter.Health.TryApplyDamage(CurrentEnemyCharacter.Damage))
+                MainViewModel.LocalizationViewModel.DisplayMessage("Player.Dead");
+        }
+
+        #endregion
+
+        #endregion
     }
 }

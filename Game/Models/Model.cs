@@ -1,6 +1,8 @@
+using ExNoSQL;
+
 namespace Models
 {
-    public abstract class Model
+    public abstract class Model : Entity
     {
     }
 }

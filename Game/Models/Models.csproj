@@ -48,6 +48,7 @@
         <Compile Include="Damage.cs" />
         <Compile Include="Health.cs" />
         <Compile Include="Model.cs" />
+        <Compile Include="Experience.cs" />
         <Compile Include="Scene.cs" />
     </ItemGroup>
     <ItemGroup>
