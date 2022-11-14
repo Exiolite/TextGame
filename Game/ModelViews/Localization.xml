@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="en">
+    <item key="Message.Command.BadParameters" value="Bad command parameters. "/>
     <item key="Message.Game.New" value="New game started:"/>
     <item key="Message.Game.Load" value="Game loaded:"/>
     <item key="Message.Game.Save" value="Game saved"/>
@@ -9,8 +10,8 @@
     <item key="Message.Game.AutoClear.Disabled" value="Auto clear diabled"/>
     <item key="Checker.Db.Context" value="Use command 'gamenew' to create new game"/>
     <item key="Checker.Player.Alive" value="Player is alive"/>
-    <item key="Checker.Player.Null" value="There is no player, use command 'respawn NameOfCharacter' first."/>
-    <item key="Checker.Player.Dead" value="Player is dead, use command 'respawn NameOfCharacter' first."/>
+    <item key="Checker.Player.Null" value="There is no player, use command 'respawn' first."/>
+    <item key="Checker.Player.Dead" value="Player is dead, use command 'respawn' first."/>
     <item key="Scene.Null" value="There is no one..."/>
     <item key="Player.Death" value="Player dead, use command 'respawn NameOfCharacter' for respawn."/>
 </localizationDictionary>

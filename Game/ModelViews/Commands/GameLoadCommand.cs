@@ -11,10 +11,8 @@ namespace ModelViews.Commands
         protected override void Run(string value)
         {
             MainViewModel.DbViewModel.Load(value);
-        }
-
-        protected override void DisplayMessages()
-        {
+            
+            
             MainViewModel.LocalizationViewModel.DisplayMessage(
                 "Message.Game.Load",
                 Db<Mc>.Context.Name

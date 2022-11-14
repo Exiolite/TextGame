@@ -11,17 +11,15 @@ namespace ModelViews.Commands
         
         protected override void InitializeCheckers()
         {
-            AddChecker(new ContextInitializedChecker());
-            AddChecker(new PlayerAliveChecker());
+            IsTrue(new ContextInitialized());
+            IsTrue(new PlayerAlive());
         }
 
         protected override void Run()
         {
             MainViewModel.DbViewModel.Save();
-        }
-        
-        protected override void DisplayMessages()
-        {
+            
+            
             MainViewModel.LocalizationViewModel.DisplayMessage(
                 "Message.Game.Save",
                 Db<Mc>.Context.Name

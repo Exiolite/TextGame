@@ -9,17 +9,15 @@ namespace ModelViews.Commands
         
         protected override void InitializeCheckers()
         {
-            AddChecker(new ContextInitializedChecker());
+            IsTrue(new ContextInitialized());
         }
 
         protected override void Run()
         {
             MainViewModel.DbViewModel.IsAutoSaveEnabled =
                 !MainViewModel.DbViewModel.IsAutoSaveEnabled;
-        }
-
-        protected override void DisplayMessages()
-        {
+            
+            
             MainViewModel.LocalizationViewModel.DisplayMessage(
                 MainViewModel.DbViewModel.IsAutoSaveEnabled
                     ? "Message.Game.AutoSave.Enabled"

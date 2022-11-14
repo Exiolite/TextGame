@@ -13,21 +13,19 @@ namespace ModelViews
 
         public void TryExecute(string userInput)
         {
-            InitializeCheckers();
-
             string[] split = userInput.ToLower().Split(' ');
             if (GetCommandName() != split[0]) return;
+            
+            if (GetType() != typeof(EnableAutoClearCommand))
+                if (MainViewModel.CommandViewModel.IsAutoClearEnabled)
+                    Console.Clear();
+            
+            InitializeCheckers();
 
             if (_commandPlugins != null)
                 foreach (Checker commandPlugin in _commandPlugins)
                     if (!commandPlugin.Check())
                         return;
-
-            if (GetType() != typeof(EnableAutoClearCommand))
-                if (MainViewModel.CommandViewModel.IsAutoClearEnabled)
-                    Console.Clear();
-            
-            DisplayMessages();
 
             if (split.Length > 1)
                 if (int.TryParse(split[1], out int value))
@@ -40,9 +38,9 @@ namespace ModelViews
                     Run(split[1]);
                     return;
                 }
-
-            Run();
             
+            Run();
+
             if (MainViewModel.DbViewModel.IsAutoSaveEnabled)
                 MainViewModel.DbViewModel.Save();
         }
@@ -54,7 +52,7 @@ namespace ModelViews
             return;
         }
 
-        protected void AddChecker(Checker checker)
+        protected void IsTrue(Checker checker)
         {
             if (_commandPlugins == null) _commandPlugins = new List<Checker>();
 
@@ -80,11 +78,6 @@ namespace ModelViews
         }
 
         protected virtual void Run(string value)
-        {
-            return;
-        }
-
-        protected virtual void DisplayMessages()
         {
             return;
         }

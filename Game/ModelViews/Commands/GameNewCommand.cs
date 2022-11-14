@@ -8,13 +8,19 @@ namespace ModelViews.Commands
         public override string GetDescription() =>
             $"{GetCommandName()} -characterName/saveName: start new game with given character/save name";
 
+        protected override void Run()
+        {
+            MainViewModel.LocalizationViewModel.DisplayMessage(
+                "Message.Command.BadParameters",
+                GetDescription()
+            );
+        }
+
         protected override void Run(string value)
         {
             MainViewModel.DbViewModel.New(value);
-        }
+            
 
-        protected override void DisplayMessages()
-        {
             MainViewModel.LocalizationViewModel.DisplayMessage(
                 "Message.Game.New",
                 Db<Mc>.Context.Name

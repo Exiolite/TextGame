@@ -3,7 +3,7 @@ using Models;
 
 namespace ModelViews.CommandPlugins
 {
-    public sealed class ContextInitializedChecker : Checker
+    public sealed class ContextInitialized : Checker
     {
         public override bool Check()
         {

@@ -10,10 +10,8 @@ namespace ModelViews.Commands
         {
             MainViewModel.CommandViewModel.IsAutoClearEnabled =
                 !MainViewModel.CommandViewModel.IsAutoClearEnabled;
-        }
-
-        protected override void DisplayMessages()
-        {
+            
+            
             MainViewModel.LocalizationViewModel.DisplayMessage(
                 MainViewModel.CommandViewModel.IsAutoClearEnabled
                     ? "Message.Game.AutoClear.Enabled"

@@ -46,10 +46,9 @@
     <ItemGroup>
         <Compile Include="Command.cs" />
         <Compile Include="CommandPlugins\Checker.cs" />
-        <Compile Include="CommandPlugins\ContextInitializedChecker.cs" />
-        <Compile Include="CommandPlugins\PlayerAliveChecker.cs" />
-        <Compile Include="CommandPlugins\PlayerDeadChecker.cs" />
-        <Compile Include="CommandPlugins\PlayerNotAliveChecker.cs" />
+        <Compile Include="CommandPlugins\ContextInitialized.cs" />
+        <Compile Include="CommandPlugins\PlayerAlive.cs" />
+        <Compile Include="CommandPlugins\PlayerNotAlive.cs" />
         <Compile Include="Commands\AttackCommand.cs" />
         <Compile Include="Commands\ClearCommand.cs" />
         <Compile Include="Commands\EnableAutoClearCommand.cs" />

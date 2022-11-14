@@ -46,6 +46,10 @@ namespace ModelViews
         {
             Db<Mc>.CreateNewContext(name);
             
+            MainViewModel.PlayerViewModel.PlayerCharacter = null;
+            MainViewModel.SceneViewModel.Scene = null;
+            MainViewModel.KillHistoryViewModel.KillHistoryCharacters = null;
+            
             MainViewModel.ExperienceViewModel.PlayerExperience = new Experience();
         }
         

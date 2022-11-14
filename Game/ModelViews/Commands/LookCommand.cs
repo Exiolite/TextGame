@@ -9,11 +9,11 @@ namespace ModelViews.Commands
         
         protected override void InitializeCheckers()
         {
-            AddChecker(new ContextInitializedChecker());
-            AddChecker(new PlayerAliveChecker());
+            IsTrue(new ContextInitialized());
+            IsTrue(new PlayerAlive());
         }
-        
-        protected override void DisplayMessages()
+
+        protected override void Run()
         {
             MainViewModel.PlayerViewModel.Display();
             MainViewModel.SceneViewModel.Display();

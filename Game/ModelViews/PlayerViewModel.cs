@@ -22,7 +22,7 @@ namespace ModelViews
             if (PlayerCharacter == null)
                 MainViewModel.LocalizationViewModel.DisplayMessage("Player.Null");
             else
-                Console.WriteLine($"{PlayerCharacter}<{MainViewModel.ExperienceViewModel.PlayerExperience}>");
+                Console.WriteLine($"{PlayerCharacter.FightName}<{MainViewModel.ExperienceViewModel.PlayerExperience}>");
 
             return this;
         }

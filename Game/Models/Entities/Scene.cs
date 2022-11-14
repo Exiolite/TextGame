@@ -26,7 +26,7 @@ namespace Models.Entities
             stringBuilder.AppendLine("You see: ");
             foreach (Character character in Enemies)
             {
-                stringBuilder.AppendLine($"     {Enemies.IndexOf(character) + 1} - {character}");
+                stringBuilder.AppendLine($"     {Enemies.IndexOf(character) + 1} - {character.FightName}");
             }
 
             return stringBuilder.ToString();

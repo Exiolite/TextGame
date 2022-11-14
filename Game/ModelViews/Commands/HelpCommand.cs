@@ -6,8 +6,8 @@ namespace ModelViews.Commands
     {
         public override string GetDescription() =>
             $"{GetCommandName()}: display all commands";
-        
-        protected override void DisplayMessages()
+
+        protected override void Run()
         {
             Console.WriteLine("Commands: ");
 

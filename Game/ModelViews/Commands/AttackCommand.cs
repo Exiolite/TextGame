@@ -10,18 +10,16 @@ namespace ModelViews.Commands
 
         protected override void InitializeCheckers()
         {
-            AddChecker(new ContextInitializedChecker());
-            AddChecker(new PlayerAliveChecker());
+            IsTrue(new ContextInitialized());
+            IsTrue(new PlayerAlive());
         }
 
         protected override void Run(int value)
         {
             if (MainViewModel.SceneViewModel.Scene.TryGetEnemyByIndex(value, out Character enemy)) 
                 MainViewModel.PlayerViewModel.Attack(enemy);
-        }
-
-        protected override void DisplayMessages()
-        {
+            
+            
             MainViewModel.PlayerViewModel.Display();
             MainViewModel.SceneViewModel.Display();
         }

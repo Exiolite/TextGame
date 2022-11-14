@@ -8,16 +8,16 @@ namespace ModelViews.Commands
     {
         public override string GetDescription() =>
             $"{GetCommandName()}: display kill history";
-        
+
         protected override void InitializeCheckers()
         {
-            AddChecker(new ContextInitializedChecker());
+            IsTrue(new ContextInitialized());
         }
 
-        protected override void DisplayMessages()
+        protected override void Run()
         {
             foreach (Character character in MainViewModel.KillHistoryViewModel.KillHistoryCharacters)
-                Console.WriteLine(character);
+                Console.WriteLine(character.Name);
         }
     }
 }
