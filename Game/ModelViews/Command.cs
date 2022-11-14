@@ -65,7 +65,7 @@ namespace ModelViews
         {
             return ToString()
                 .ToLower()
-                .Replace("views.commands.", "")
+                .Replace("modelviews.commands.", "")
                 .Replace("command", "");
         }
 

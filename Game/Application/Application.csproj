@@ -50,10 +50,6 @@
         <Project>{de4df2f4-959d-4be6-b56c-dd556f85695d}</Project>
         <Name>Models</Name>
       </ProjectReference>
-      <ProjectReference Include="..\Views\Views.csproj">
-        <Project>{1e07003b-417e-4e7b-9b46-7ee23c883bc3}</Project>
-        <Name>Views</Name>
-      </ProjectReference>
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />

@@ -1,3 +1,4 @@
+using ModelViews;
 using NUnit.Framework;
 
 namespace Tests.View
@@ -8,7 +9,8 @@ namespace Tests.View
         [Test]
         public void GET_Commands_FROM_Assembly()
         {
-            Assert.True(Views.View.CommandView.Commands.Count > 0);
+            var l = MainViewModel.CommandViewModel.Commands;
+            Assert.True(l.Count > 0);
         }
     }
 }

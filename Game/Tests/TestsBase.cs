@@ -1,10 +1,12 @@
-﻿namespace Tests
+﻿using ModelViews;
+
+namespace Tests
 {
     public class TestsBase
     {
         public TestsBase()
         {
-            Views.View view = new Views.View();
+            MainViewModel mainViewModel = new MainViewModel();
         }
     }
 }
