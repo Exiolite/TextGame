@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using ExNoSQL;
+using Models.Entities;
 
 namespace Models
 {
@@ -10,10 +12,10 @@ namespace Models
         public Experience PlayerExperience { get; set; }
         public Scene Scene { get; set; }
         
-        public Repository<Character> KilledCharactersByPlayer { get; set; } = new Repository<Character>();
+        public List<Character> KillHistoryCharacters { get; set; }
 
-
-        public Mc() : base("D:/TextGame.exdb")
+        
+        public Mc() : base("D:/")
         {
         }
     }

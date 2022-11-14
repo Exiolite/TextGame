@@ -1,6 +1,6 @@
-namespace Models
+namespace Models.Entities
 {
-    public sealed class Character : Model
+    public sealed class Character : ExNoSQL.Entity
     {
         public string Name { get; set; }
         public Health Health { get; set; }

@@ -1,4 +1,5 @@
 using Models;
+using Models.Entities;
 using ModelViews;
 using Views.CommandPlugins;
 
@@ -8,8 +9,8 @@ namespace Views.Commands
     {
         protected override void AddCheckers()
         {
-            AddCommandPlugin(new ContextInitialized());
-            AddCommandPlugin(new PlayerInitialized());
+            AddChecker(new ContextInitialized());
+            AddChecker(new PlayerInitialized());
         }
 
         protected override void Run()

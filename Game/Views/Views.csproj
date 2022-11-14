@@ -46,6 +46,7 @@
         <Compile Include="Command.cs" />
         <Compile Include="CommandPlugins\PlayerInitialized.cs" />
         <Compile Include="Commands\AutoClearCommand.cs" />
+        <Compile Include="Commands\EnableAutoSaveCommand.cs" />
         <Compile Include="Commands\ExitCommand.cs" />
         <Compile Include="Commands\GameLoadCommand.cs" />
         <Compile Include="Commands\GameNewCommand.cs" />

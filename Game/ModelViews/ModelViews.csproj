@@ -44,7 +44,9 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="DbViewModel.cs" />
         <Compile Include="ExperienceViewModel.cs" />
+        <Compile Include="KillHistoryViewModel.cs" />
         <Compile Include="LocalizationViewModel.cs" />
         <Compile Include="MainViewModel.cs" />
         <Compile Include="PlayerViewModel.cs" />

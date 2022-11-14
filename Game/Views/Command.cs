@@ -45,7 +45,7 @@ namespace Views
             return;
         }
 
-        protected void AddCommandPlugin(Checker checker)
+        protected void AddChecker(Checker checker)
         {
             if (_commandPlugins == null) _commandPlugins = new List<Checker>();
             

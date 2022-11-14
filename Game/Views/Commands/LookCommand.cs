@@ -7,8 +7,8 @@ namespace Views.Commands
     {
         protected override void AddCheckers()
         {
-            AddCommandPlugin(new ContextInitialized());
-            AddCommandPlugin(new PlayerInitialized());
+            AddChecker(new ContextInitialized());
+            AddChecker(new PlayerInitialized());
         }
         
         protected override void Run()

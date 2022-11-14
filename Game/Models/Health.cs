@@ -1,6 +1,6 @@
 namespace Models
 {
-    public sealed class Health : Model
+    public sealed class Health
     {
         public int MaxValue { get; set; }
         public int Value { get; set; }

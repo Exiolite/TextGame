@@ -1,6 +1,6 @@
 namespace Models
 {
-    public sealed class Experience : Model
+    public sealed class Experience
     {
         #region Properties
 

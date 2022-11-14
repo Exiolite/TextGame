@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Models
+namespace Models.Entities
 {
-    public sealed class Scene : Model
+    public sealed class Scene : ExNoSQL.Entity
     {
         public List<Character> Enemies { get; set; }
 
@@ -32,7 +32,7 @@ namespace Models
             return stringBuilder.ToString();
         }
 
-        public bool TryGetEnemy(int index, out Character enemy)
+        public bool TryGetEnemyByIndex(int index, out Character enemy)
         {
             if (Enemies.Count <= index)
             {

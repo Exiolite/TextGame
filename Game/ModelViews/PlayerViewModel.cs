@@ -1,6 +1,5 @@
 using System;
-using ExNoSQL;
-using Models;
+using Models.Entities;
 
 namespace ModelViews
 {
@@ -18,22 +17,26 @@ namespace ModelViews
 
         #region Public
 
-        public void Display()
+        public PlayerViewModel Display()
         {
             if (PlayerCharacter == null)
                 MainViewModel.LocalizationViewModel.DisplayMessage("Player.Null");
             else
                 Console.WriteLine($"{PlayerCharacter}<{MainViewModel.ExperienceViewModel.PlayerExperience}>");
+
+            return this;
         }
 
-        public void Attack(Character character)
+        public PlayerViewModel Attack(Character character)
         {
             CurrentEnemyCharacter = character;
 
             CheckEnemyCharacter();
             CheckPlayerCharacter();
             ProcessPlayerAttack();
-            ProcessEnemyAttack();
+                ProcessEnemyAttack();
+
+            return this;
         }
 
         #endregion
@@ -61,8 +64,7 @@ namespace ModelViews
             {
                 Console.WriteLine($"{CurrentEnemyCharacter.Name} was killed by {PlayerCharacter.Name}");
                 MainViewModel.ExperienceViewModel.PlayerExperience?.Add((uint)CurrentEnemyCharacter.Damage.Value);
-
-                Db<Mc>.Context.KilledCharactersByPlayer.Insert(CurrentEnemyCharacter);
+                MainViewModel.KillHistoryViewModel.AddCharacterToKillFeed(CurrentEnemyCharacter);
             }
             else
                 Console.WriteLine(

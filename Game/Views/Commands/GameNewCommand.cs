@@ -1,17 +1,12 @@
-using ExNoSQL;
-using Models;
 using ModelViews;
- 
+
 namespace Views.Commands
 {
     public sealed class GameNewCommand : Command
     {
-        protected override void Run()
+        protected override void Run(string value)
         {
-            Db<Mc>.CreateNewContext();
-            
-            MainViewModel.LocalizationViewModel.DisplayMessage("Checker.Player");
-            MainViewModel.ExperienceViewModel.PlayerExperience = new Experience();
+            MainViewModel.DbViewModel.New(value);
         }
     }
 }

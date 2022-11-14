@@ -1,4 +1,4 @@
-using Models;
+using Models.Entities;
 using ModelViews;
 using Views.CommandPlugins;
 
@@ -8,13 +8,13 @@ namespace Views.Commands
     {
         protected override void AddCheckers()
         {
-            AddCommandPlugin(new ContextInitialized());
-            AddCommandPlugin(new PlayerInitialized());
+            AddChecker(new ContextInitialized());
+            AddChecker(new PlayerInitialized());
         }
         
         protected override void Run(int value)
         {
-            if (MainViewModel.SceneViewModel.Scene.TryGetEnemy(value, out Character enemy))
+            if (MainViewModel.SceneViewModel.Scene.TryGetEnemyByIndex(value, out Character enemy))
             {
                 MainViewModel.PlayerViewModel.Attack(enemy);
                 MainViewModel.PlayerViewModel.Display();

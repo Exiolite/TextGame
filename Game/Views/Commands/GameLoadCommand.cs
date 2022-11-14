@@ -1,18 +1,12 @@
-using ExNoSQL;
-using Models;
 using ModelViews;
 
 namespace Views.Commands
 {
     public class GameLoadCommand : Command
     {
-        protected override void Run()
+        protected override void Run(string value)
         {
-            Db<Mc>.Import();
-
-            MainViewModel.PlayerViewModel.PlayerCharacter = Db<Mc>.Context.PlayerCharacter;
-            MainViewModel.SceneViewModel.Scene = Db<Mc>.Context.Scene;
-            MainViewModel.ExperienceViewModel.PlayerExperience = Db<Mc>.Context.PlayerExperience;
+            MainViewModel.DbViewModel.Load(value);
         }
     }
 }

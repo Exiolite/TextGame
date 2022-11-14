@@ -1,4 +1,5 @@
 using Models;
+using Models.Entities;
 using ModelViews;
 using NUnit.Framework;
 

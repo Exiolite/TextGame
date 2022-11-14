@@ -8,7 +8,7 @@ namespace Views.Commands
     {
         protected override void AddCheckers()
         {
-            AddCommandPlugin(new ContextInitialized());
+            AddChecker(new ContextInitialized());
         }
         
 

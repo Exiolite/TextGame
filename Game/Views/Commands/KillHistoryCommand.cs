@@ -1,6 +1,6 @@
 using System;
-using ExNoSQL;
-using Models;
+using Models.Entities;
+using ModelViews;
 using Views.CommandPlugins;
 
 namespace Views.Commands
@@ -9,13 +9,13 @@ namespace Views.Commands
     {
         protected override void AddCheckers()
         {
-            AddCommandPlugin(new ContextInitialized());
-            AddCommandPlugin(new PlayerInitialized());
+            AddChecker(new ContextInitialized());
+            AddChecker(new PlayerInitialized());
         }
 
         protected override void Run()
         {
-            foreach (Character character in Db<Mc>.Context.KilledCharactersByPlayer.GetAll())
+            foreach (Character character in MainViewModel.KillHistoryViewModel.KillHistoryCharacters)
                 Console.WriteLine(character);
         }
     }

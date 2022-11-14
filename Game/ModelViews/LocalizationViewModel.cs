@@ -24,6 +24,12 @@ namespace ModelViews
             if (Localization.TryGetValue(messageName, out string value))
                 Console.WriteLine(value);
         }
+        
+        public void DisplayMessage(string messageName, string concat)
+        {
+            if (Localization.TryGetValue(messageName, out string value))
+                Console.WriteLine($"{value} {concat}");
+        }
 
 
         private void InitializeLocalizationDictionary()
